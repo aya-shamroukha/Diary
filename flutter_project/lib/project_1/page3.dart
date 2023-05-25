@@ -17,7 +17,11 @@ import 'package:flutter/material.dart';
                      Container(
                       padding: EdgeInsets.symmetric(horizontal: 20,vertical: 50),
                       alignment: Alignment.topRight,
-                      child: Text('Skip',style: TextStyle(color: Colors.grey),),
+                      child: InkWell(
+                        onTap: (){
+                           Navigator.of(context).pushNamed('login');
+                        },
+                        child: Text('Skip',style: TextStyle(color: Colors.grey),)),
                      ),
                      Image.asset('images/cuate.png',scale: 0.8,),
                      SizedBox(height: 40,),

@@ -50,11 +50,12 @@ class _Homepage_listState extends State<Homepage> {
             Padding(
               padding: const EdgeInsets.only(bottom: 200,top: 20),
               child: ElevatedButton(
-                child: (current_page==(pages.length-1))?Text('Get Start',style: TextStyle(fontSize: 17,color: Colors.white),)
-                :Text(
-                  'next',
-                  style: TextStyle(color: Colors.white),
-                ),
+               
+                child: 
+                (current_page==(pages.length-1))?Text('Get Start',
+                style: TextStyle(fontSize: 17,color: Colors.white),)
+                :Text(  'next',
+                  style: TextStyle(color: Colors.white), ),
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Color(0xff8BA8B5)),
@@ -63,7 +64,8 @@ class _Homepage_listState extends State<Homepage> {
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(27)))),
                 onPressed: () {
-                  pageController.nextPage(
+                 (current_page==(pages.length-1)) ? Navigator.of(context).pushNamed('login'):
+                 pageController.nextPage(
                       duration: Duration(milliseconds: 800),
                       curve: Curves.easeInOutQuint);
                 },
